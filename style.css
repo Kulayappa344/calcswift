@@ -1,0 +1,117 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background 0.3s ease;
+}
+
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+body.dark .calculator {
+  background: #1e1e1e;
+  color: white;
+}
+
+.calculator h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+#display {
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: right;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+body.dark #display {
+  background: #2a2a2a;
+  color: white;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0078d7;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #005cbf;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  display: inline-block;
+  border-radius: 34px;
+  position: relative;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #0078d7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
